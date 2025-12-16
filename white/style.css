@@ -1,31 +1,26 @@
 /* Shell & Disconnected */
-.custom.controller, .custom.controller::after {
+.gamepad, .gamepad::after {
   background-image: url('https://raw.githubusercontent.com/Zxivyto/C0ntroll3r/main/white/shell.svg') !important;
-  background-size: 100vw auto !important;
+  background-size: 100% 100% !important;
   background-position: left top !important;
   background-repeat: no-repeat !important;
-  width: 100% !important;
-  height: 100% !important;
 }
-.custom.controller.disconnected {
-  opacity: 0.75 !important;
-}
-.custom.controller.disconnected::after {
-  content: '';
-  background-image: url('https://raw.githubusercontent.com/Zxivyto/C0ntroll3r/main/white/disconnected.svg') !important;
-  position: absolute !important;
-  opacity: 0.5 !important;
+
+/* On cache les images de base pour éviter les doublons */
+.gamepad .face, .gamepad .dpad, .gamepad .bumper, .gamepad .trigger, .gamepad .stick {
+    background-image: none !important;
+    background-color: transparent !important;
 }
 
 /* L2 & R2 */
-.custom .triggers {
+.gamepad .triggers {
   position: absolute !important;
   width: 74.8782vw !important;
   height: 11.6896vw !important;
   left: 12.4240vw !important;
   top: 0 !important;
 }
-.custom .trigger, .custom .triggers::before, .custom .triggers::after {
+.gamepad .trigger, .gamepad .triggers::before, .gamepad .triggers::after {
   position: absolute !important;
   background-image: url('https://raw.githubusercontent.com/Zxivyto/C0ntroll3r/main/white/triggers.svg') !important;
   background-repeat: no-repeat !important;
@@ -34,50 +29,53 @@
   height: 11.6896vw !important;
   top: 0 !important;
 }
-.custom .trigger {
+.gamepad .trigger {
   background-position-y: -13.6896vw !important;
   opacity: 0 !important;
 }
-.custom .triggers::before, .custom .triggers::after {
+.gamepad .triggers::before, .gamepad .triggers::after {
   content: '';
   background-position-y: -1vw !important;
   z-index: -1 !important;
+  display: block !important;
+  width: 12.4615vw !important;
+  height: 11.6896vw !important;
 }
-.custom .trigger.left, .custom .triggers::before {
+.gamepad .trigger.left, .gamepad .triggers::before {
   left: 0 !important;
   background-position-x: -1vw !important;
 }
-.custom .trigger.right, .custom .triggers::after {
+.gamepad .trigger.right, .gamepad .triggers::after {
   right: 0 !important;
   background-position-x: -14.4615vw !important;
 }
 
 /* L1 & R1 */
-.custom .bumpers {
+.gamepad .bumpers {
   position: absolute !important;
   width: 75.6540vw !important;
   height: 4.6244vw !important;
   left: 12.120vw !important;
   top: 12.9371vw !important;
 }
-.custom .bumper {
+.gamepad .bumper {
   position: absolute !important;
   background-image: url('https://raw.githubusercontent.com/Zxivyto/C0ntroll3r/main/white/bumpers.svg') !important;
   background-repeat: no-repeat !important;
   background-size: 29.608984vw 12.248846vw !important;
   background-position-y: -1vw !important;
 }
-.custom .bumper.pressed {
+.gamepad .bumper.pressed {
   background-position-y: -6.6244vw !important;
 }
-.custom .bumper.left {
+.gamepad .bumper.left {
   background-position-x: -1vw !important;
   width: 13.2734vw !important;
   height: 4.4238vw !important;
   left: 0 !important;
   top: 0.0476vw !important;
 }
-.custom .bumper.right {
+.gamepad .bumper.right {
   background-position-x: -15.2734vw !important;
   width: 13.3356vw !important;
   height: 4.6244vw !important;
@@ -86,47 +84,47 @@
 }
 
 /* D-Pad */
-.custom .dpad {
+.gamepad .dpad {
   position: absolute !important;
   width: 16.8593vw !important;
   height: 17.0337vw !important;
   left: 10.2705vw !important;
   top: 23.3223vw !important;
 }
-.custom .face {
+.gamepad .face {
   position: absolute !important;
   background-image: url('https://raw.githubusercontent.com/Zxivyto/C0ntroll3r/main/white/dpad.svg') !important;
   background-repeat: no-repeat !important;
   background-size: 31.727148vw 17.604692vw !important;
 }
-.custom .face.up.pressed, .custom .face.down.pressed {
+.gamepad .face.up.pressed, .gamepad .face.down.pressed {
   background-position-y: -9.3024vw !important;
 }
-.custom .face.left.pressed, .custom .face.right.pressed {
+.gamepad .face.left.pressed, .gamepad .face.right.pressed {
   background-position-y: -9.9229vw !important;
 }
-.custom .face.up {
+.gamepad .face.up {
   width: 6.0612vw !important;
   height: 7.3023vw !important;
   left: 5.4283vw !important;
   top: 0 !important;
   background-position: -1vw -1vw !important;
 }
-.custom .face.down {
+.gamepad .face.down {
   width: 6.0612vw !important;
   height: 7.3023vw !important;
   left: 5.4283vw !important;
   bottom: 0 !important;
   background-position: -8.0613vw -1vw !important;
 }
-.custom .face.left {
+.gamepad .face.left {
   width: 7.3023vw !important;
   height: 6.0612vw !important;
   left: 0 !important;
   top: 5.5400vw !important;
   background-position: -15.1226vw -1.6205vw !important;
 }
-.custom .face.right {
+.gamepad .face.right {
   width: 7.3023vw !important;
   height: 6.0612vw !important;
   right: 0 !important;
@@ -135,14 +133,14 @@
 }
 
 /* X, Circle, Quad, Triangle */
-.custom .abxy {
+.gamepad .abxy {
   position: absolute !important;
   width: 21.5581vw !important;
   height: 21.5230vw !important;
   left: 70.3329vw !important;
   top: 21.1210vw !important;
 }
-.custom .button {
+.gamepad .button {
   position: absolute !important;
   background-image: url('https://raw.githubusercontent.com/Zxivyto/C0ntroll3r/main/white/abxy.svg') !important;
   background-repeat: no-repeat !important;
@@ -150,39 +148,39 @@
   width: 6.7998vw !important;
   height: 6.7998vw !important;
 }
-.custom .button.pressed {
+.gamepad .button.pressed {
   background-position-y: -8.7999vw !important;
 }
-.custom .a {
+.gamepad .button.a { /* Croix/X */
   background-position: -1vw -1vw !important;
   left: 7.4319vw !important;
   bottom: 0 !important;
 }
-.custom .b {
+.gamepad .button.b { /* Rond/B */
   background-position: -8.7999vw -1vw !important;
   right: 0 !important;
   top: 7.3264vw !important;
 }
-.custom .x {
+.gamepad .button.x { /* Carré/X */
   background-position: -16.5997vw -1vw !important;
   left: 0 !important;
   top: 7.3264vw !important;
 }
-.custom .y {
+.gamepad .button.y { /* Triangle/Y */
   background-position: -24.3996vw -1vw !important;
   left: 7.4319vw !important;
   top: 0 !important;
 }
 
 /* Share & Start */
-.custom .arrows {
+.gamepad .arrows {
   position: absolute !important;
   width: 49.6943vw !important;
   height: 4.6901vw !important;
   left: 25.1115vw !important;
   top: 18.5723vw !important;
 }
-.custom .back, .custom .start {
+.gamepad .back, .gamepad .start {
   position: absolute !important;
   background-image: url('https://raw.githubusercontent.com/Zxivyto/C0ntroll3r/main/white/back_start.svg') !important;
   background-repeat: no-repeat !important;
@@ -191,30 +189,30 @@
   width: 2.8808vw !important;
   height: 4.6901vw !important;
 }
-.custom .back {
+.gamepad .back {
   background-position-x: -1vw !important;
   left: 0 !important;
   top: 0 !important;
 }
-.custom .start {
+.gamepad .start {
   background-position-x: -4.8809vw !important;
   right: 0 !important;
   top: 0 !important;
 }
-.custom .back.pressed, .custom .start.pressed {
+.gamepad .back.pressed, .gamepad .start.pressed {
   background-position-y: -6.6902vw !important;
 }
 
 /* Sticks */
-.custom .sticks {
+.gamepad .sticks {
   position: absolute !important;
   width: 42.6867vw !important;
   height: 10.6903vw !important;
   left: 28.5515vw !important;
   top: 40.2216vw !important;
-  background-image: transparent !important; /* Fix potentiel */
+  background: transparent !important;
 }
-.custom .stick {
+.gamepad .stick {
   position: absolute !important;
   background-image: url('https://raw.githubusercontent.com/Zxivyto/C0ntroll3r/main/white/sticks.svg') !important;
   background-repeat: no-repeat !important;
@@ -223,24 +221,22 @@
   height: 10.6903vw !important;
   width: 10.6903vw !important;
 }
-.custom .stick.pressed {
+.gamepad .stick.pressed {
   background-position-y: -12.6905vw !important;
 }
-.custom .stick.left {
+.gamepad .stick.left {
   background-position-x: -1vw !important;
   top: 0 !important;
   left: 0 !important;
-  background-color: transparent !important;
 }
-.custom .stick.right {
+.gamepad .stick.right {
   background-position-x: -12.6903vw !important;
   top: 0 !important;
   left: calc(100% - 10.6903vw) !important;
-  background-color: transparent !important;
 }
 
-/* PlayStation logo (Meta) - Lien corrigé */
-.custom .meta {
+/* PlayStation logo */
+.gamepad .meta {
   position: absolute !important;
   width: 6.9435vw !important;
   height: 5.4249vw !important;
@@ -251,46 +247,6 @@
   background-size: 8.943500vw 13.849788vw !important;
   background-position: -1vw -1vw !important;
 }
-.custom .meta.pressed {
+.gamepad .meta.pressed {
   background-position-y: -7.4249vw !important;
-}
-
-/* Touchpad */
-.custom .touchpad {
-  position: absolute !important;
-  width: 40.2075vw !important;
-  height: 21.9137vw !important;
-  left: 29.8152vw !important;
-  top: 13.4086vw !important;
-  background-image: url('https://raw.githubusercontent.com/Zxivyto/C0ntroll3r/main/white/touchpad.svg') !important; /* Corrigé ici aussi au cas où */
-  background-repeat: no-repeat !important;
-  background-size: 42.207492vw 46.827496vw !important;
-  background-position: -1vw -1vw !important;
-}
-.custom .touchpad.pressed {
-  background-position-y: -23.9138vw !important;
-}
-
-/* Lightbar */
-.custom .quadrant {
-  position: absolute !important;
-  width: 42.1340vw !important;
-  height: 21.1098vw !important;
-  left: 28.9450vw !important;
-  top: 15.6201vw !important;
-  background-image: url('https://raw.githubusercontent.com/Zxivyto/C0ntroll3r/main/white/lightbar.svg') !important;
-  background-repeat: no-repeat !important;
-  background-size: cover !important;
-}
-.custom .quadrant.p0 {
-  filter: hue-rotate(0deg) !important; 
-}
-.custom .quadrant.p1 {
-  filter: hue-rotate(90deg) !important; 
-}
-.custom .quadrant.p2 {
-  filter: hue-rotate(-120deg) !important; 
-}
-.custom .quadrant.p3 {
-  filter: hue-rotate(30deg) !important; 
 }
